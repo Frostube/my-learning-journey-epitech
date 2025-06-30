@@ -1,10 +1,27 @@
-# Python Learning Project
+# My Learning Journey Repository
 
-This repository contains Python code examples and exercises from my learning journey.
+This repository contains all my learning materials, lessons, and projects organized by topic and week.
 
-## Contents
+## Repository Structure
 
-- `New beginning.py` - Basic Python concepts including:
+```
+├── week-1/
+│   ├── first-lesson/
+│   │   └── New beginning.py
+│   └── [future lessons...]
+├── week-2/
+│   └── [future lessons...]
+├── projects/
+│   └── [future projects...]
+└── resources/
+    └── [study materials, notes, etc...]
+```
+
+## Current Contents
+
+### Week 1 - First Lesson
+- **Location**: `week-1/first-lesson/`
+- **File**: `New beginning.py` - Basic Python concepts including:
   - Variables and data types
   - Arithmetic operations
   - String concatenation
@@ -15,11 +32,18 @@ This repository contains Python code examples and exercises from my learning jou
 
 ## Getting Started
 
-To run the Python file:
+To run any Python file:
 
 ```bash
-python "New beginning.py"
+python "filename.py"
 ```
+
+## How to Add New Lessons
+
+1. Create a new folder for the week/topic: `week-X/lesson-name/`
+2. Add your code files and materials
+3. Update this README with the new content
+4. Commit and push your changes
 
 ## Author
 
