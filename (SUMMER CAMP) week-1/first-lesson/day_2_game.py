@@ -12,17 +12,35 @@ player.color("red")
 player.penup()
 player.speed(0)
 
+BOUNDARY = 290
+
 def move_up():
-    player.sety(player.ycor() + 20)
+    y = player.ycor()
+    if y + 20 <= BOUNDARY:
+        player.sety(y + 20)
+    else:
+        player.sety(BOUNDARY)
 
 def move_down():
-    player.sety(player.ycor() - 20)
+    y = player.ycor()
+    if y - 20 >= -BOUNDARY:
+        player.sety(y - 20)
+    else:
+        player.sety(-BOUNDARY)
 
 def move_left():
-    player.setx(player.xcor() - 20)
+    x = player.xcor()
+    if x - 20 >= -BOUNDARY:
+        player.setx(x - 20)
+    else:
+        player.setx(-BOUNDARY)
 
 def move_right():
-    player.setx(player.xcor() + 20)
+    x = player.xcor()
+    if x + 20 <= BOUNDARY:
+        player.setx(x + 20)
+    else:
+        player.setx(BOUNDARY)
 
 wn.listen()
 wn.onkey(move_left, "Left")
