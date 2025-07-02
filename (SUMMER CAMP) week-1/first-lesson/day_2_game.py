@@ -17,12 +17,6 @@ player.speed(0)
 player.goto(0, 250)
 
 #ENEMY
-enemy = turtle.Turtle()
-enemy.shape("circle")
-enemy.color("red")
-enemy.penup()
-enemy.speed(0)
-
 #PLAYER BOUNDARY CHECK
 # Setting the boundary for player movement
 BOUNDARY = 290
@@ -56,7 +50,6 @@ def move_right():
         player.setx(BOUNDARY)
         
 #ENEMY START POSITION
-enemy.goto(random.randint(-BOUNDARY, BOUNDARY), random.randint(-BOUNDARY, BOUNDARY))
 
 #ENEMY AMOUNT 5 
 enemy_count = 5
@@ -76,11 +69,18 @@ def move_enemy():
     for enemy in enemies:
         x = random.randint(-BOUNDARY, BOUNDARY)
         y = random.randint(-BOUNDARY, BOUNDARY)
-        enemy.goto(x, y)
-    wn.ontimer(move_enemy, 10000)
+        enemy.goto(player.xcor() + x, player.ycor() + y)
+        
+    wn.ontimer(move_enemy, 1000)
+    
+    
+#ONCE ALL ENEMIES ARE YELLOW, SAY "You Win!"
+#    def check_win_condition(): 
+#        if all(enemy.color()[0] == "yellow" for enemy in enemies):
+#            print("You Win!")
 
 #ENEMY MOVEMENT START
-#move_enemy()
+move_enemy()
 
 #ENEMY SPEED
 def increase_enemy_speed():
@@ -110,6 +110,13 @@ def check_enemy_boundary():
     for enemy in enemies:
         if enemy.xcor() > BOUNDARY or enemy.xcor() < -BOUNDARY or enemy.ycor() > BOUNDARY or enemy.ycor() < -BOUNDARY:
             enemy.goto(random.randint(-BOUNDARY, BOUNDARY), random.randint(-BOUNDARY, BOUNDARY))
+            
+            
+            
+    wn.ontimer(check_enemy_boundary, 100)
+
+# ENEMY BOUNDARY CHECK START
+check_enemy_boundary()
 
 
 
