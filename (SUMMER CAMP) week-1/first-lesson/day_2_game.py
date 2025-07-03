@@ -111,7 +111,7 @@ def check_enemy_boundary():
         if enemy.xcor() > BOUNDARY or enemy.xcor() < -BOUNDARY or enemy.ycor() > BOUNDARY or enemy.ycor() < -BOUNDARY:
             enemy.goto(random.randint(-BOUNDARY, BOUNDARY), random.randint(-BOUNDARY, BOUNDARY))
             
-            
+
             
     wn.ontimer(check_enemy_boundary, 100)
 
